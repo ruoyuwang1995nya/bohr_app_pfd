@@ -94,7 +94,7 @@ def get_exploration(opts:Dist):
 def get_global_config(opts: Dist):
     bohrium_config={
             "username": opts.bohrium_username,
-            "password": opts.bohrium_password,
+            "ticket": opts.bohrium_ticket,
             "project_id": int(opts.bohrium_project_id)
         }
     return bohrium_config

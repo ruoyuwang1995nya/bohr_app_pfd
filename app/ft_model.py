@@ -7,7 +7,7 @@ from dp.launching.typing import (
     BohriumUsername, 
     BohriumProjectId, 
     BohriumMachineType,
-    BohriumPassword
+    BohriumTicket
 )
 
 from dp.launching.cli import (
@@ -28,7 +28,7 @@ class InjectConfig(BaseModel):
     Get bohrium username, etc.
     '''
     bohrium_username: BohriumUsername
-    bohrium_password: BohriumPassword
+    bohrium_ticket: BohriumTicket
     bohrium_project_id: BohriumProjectId
 
 class UploadFiles(BaseModel):
