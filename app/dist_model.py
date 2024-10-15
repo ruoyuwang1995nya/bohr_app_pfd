@@ -88,13 +88,14 @@ class TeacherModel(BaseModel):
     )
     custom_type_map : Boolean = Field(
         title="input type map",
-        description="Using custom type map"
+        description="Using custom type map (The default map type is the same as that of DPA-2 Q1 model)",
+        default=False
     )
     
 @teacher_group
 @ui.Visible(TeacherModel,"custom_type_map",Equal,True)
 class TypeMap(BaseModel):
-    type_map: List[str] = Field(
+    type_map: String = Field(
         default=None,
         description="type map, e.g., 'H,Li,O'"
     )
@@ -248,7 +249,7 @@ class Dist(
     UploadFiles,
     InjectConfig,
     Util,
-    #DemoMode,
+    TypeMap,
     DistModel,
     ExploreParamsNptLAMMPS,
     ExploreParams,

@@ -14,7 +14,7 @@ def get_inputs(opts:Dist,
                ):
     inputs={}
     if opts.custom_type_map is True:
-        inputs["type_map"]=opts.type_map
+        inputs["type_map"]=str(opts.type_map).split(',')
     else:
         inputs["type_map"]=default_type_map
     inputs["teacher_models_paths"]=[model_path]

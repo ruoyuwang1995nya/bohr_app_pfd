@@ -145,14 +145,15 @@ class PretrainModel(BaseModel):
     )
     custom_type_map : Boolean = Field(
         title="input type map",
-        description="Using custom type map",
+        default=False,
+        description="Using custom type map (The default map type is the same as that of DPA-2 Q1 model)",
         index=1
     )
     
 @model_group
 @ui.Visible(PretrainModel,"custom_type_map",Equal,True)
 class TypeMap(BaseModel):
-    type_map: List[str] = Field(
+    type_map: String = Field(
         default=None,
         description="type map, e.g., 'H,Li,O'",
         index=2
@@ -322,7 +323,7 @@ class Finetune(
     FpImageABACUS,
     FpMachine,
     FpType,
-    #DemoMode,
+    TypeMap,
     ExploreParamsNptLAMMPS,
     ExploreParams,
     PertConf,
