@@ -1,0 +1,46 @@
+{
+    "bohrium_username": "ruoyuwang1995@gmail.com",
+    "bohrium_password": "ai4m@1234",
+    "bohrium_project_id": "29496",
+    "atom_pert_distance": 0.1,
+    "cell_pert_fraction": 0.02,
+    "pert_num": 10,
+    "bohrium_job_type": "container",
+    "bohrium_machine_type": "c8_m31_1 * NVIDIA T4",
+    "bohrium_platform": "ali",
+    "configurations": [
+        "./tmp/dist/LGPS.poscar"
+    ],
+    "training_script":"./tmp/dist/train.json",
+    "converge_rmse": 0.01,
+    "converge_type": "force_rmse",
+    "custom_type_map": false,
+    "default_image": "registry.dp.tech/dptech/ubuntu:22.04-py3.10",
+    "default_machine": "c2_m8_cpu",
+    "demo_mode": false,
+    "dt": 0.002,
+    "explore_image": "registry.dp.tech/dptech/deepmd-kit:2024Q1-d23cf3e",
+    "explore_machine": "1 * NVIDIA V100_32g",
+    "explore_style": "lmp-npt",
+    "group_size": 1,
+    "max_iter": 1,
+    "monitering": false,
+    "n_sample": 5,
+    "nsteps": 100,
+    "output_directory": "./outputs",
+    "pool_size": 1,
+    "press": [
+      1
+    ],
+    "style": "dp",
+    "teacher_model_file": [
+      "./tmp/dist/lgps_ft.ckpt.pt"
+    ],
+    "teacher_model_type": "dp",
+    "temps": [
+      300
+    ],
+    "train_image": "registry.dp.tech/dptech/deepmd-kit:2024Q1-d23cf3e",
+    "train_machine": "1 * NVIDIA V100_32g",
+    "trj_freq": 10
+  }
