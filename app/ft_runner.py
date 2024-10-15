@@ -350,4 +350,5 @@ def FinetuneRunner(opts: Finetune,
         no_submission=no_submission,
         only_submit= not opts.monitering,
     )
+    os.chdir(cwd)
     shutil.copytree(workdir, output_dir/'workdir', dirs_exist_ok = True)
