@@ -199,7 +199,7 @@ def DistRunner(opts: Dist,
         
     # change to workdir
     output_dir=Path(opts.output_directory)
-    output_dir.mkdir()
+    #output_dir.mkdir()
     os.chdir(workdir)
     config={
         "bohrium_config":get_global_config(opts),

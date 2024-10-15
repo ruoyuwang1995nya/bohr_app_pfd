@@ -293,7 +293,7 @@ def FinetuneRunner(opts: Finetune,
             shutil.copy(ii,orb_dir)
     
     output_dir=Path(opts.output_directory)
-    output_dir.mkdir()
+    #output_dir.mkdir()
     # change to workdir
     os.chdir(workdir)
     
