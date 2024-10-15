@@ -223,7 +223,7 @@ def DistRunner(opts: Dist,
         config=json.load(fp)
         
     # submit workflow
-    FlowGen(config,download_path=Path("returns")).submit(
+    FlowGen(config,download_path=opts.output_directory).submit(
         no_submission=no_submission,
         only_submit= not opts.monitering,
     )

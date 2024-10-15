@@ -11,8 +11,8 @@ from app.ft_runner import FinetuneRunner
 
 def to_parser():
     return {
-        "Model Distillation": SubParser(Dist, DistRunner, "Running model distillation"),
-        "Model Finetune": SubParser(Finetune,FinetuneRunner,"Running model finetune")
+        "Model_Distillation": SubParser(Dist, DistRunner, "Running model distillation"),
+        "Model_Finetune": SubParser(Finetune,FinetuneRunner,"Running model finetune")
     }
 
 if __name__ == "__main__":
