@@ -292,6 +292,8 @@ def FinetuneRunner(opts: Finetune,
         for ii in opts.orb_files:
             shutil.copy(ii,orb_dir)
     
+    output_dir=Path(opts.output_directory)
+    output_dir.mkdir()
     # change to workdir
     os.chdir(workdir)
     
@@ -344,7 +346,8 @@ def FinetuneRunner(opts: Finetune,
         config=json.load(fp)
 
     # submit workflow
-    FlowGen(config,download_path=opts.output_directory).submit(
+    FlowGen(config,download_path="./returns").submit(
         no_submission=no_submission,
         only_submit= not opts.monitering,
     )
+    shutil.copytree(workdir, output_dir/'workdir', dirs_exist_ok = True)

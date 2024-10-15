@@ -197,10 +197,10 @@ def DistRunner(opts: Dist,
     else:
         train_script=dist_train_script_template[opts.dist_model_type]
         
-    
     # change to workdir
+    output_dir=Path(opts.output_directory)
+    output_dir.mkdir()
     os.chdir(workdir)
-    
     config={
         "bohrium_config":get_global_config(opts),
         "default_step_config":get_default_step_config(opts),
@@ -223,7 +223,9 @@ def DistRunner(opts: Dist,
         config=json.load(fp)
         
     # submit workflow
-    FlowGen(config,download_path=opts.output_directory).submit(
+    FlowGen(config,download_path="./returns").submit(
         no_submission=no_submission,
         only_submit= not opts.monitering,
     )
+    shutil.copytree(workdir, output_dir/'workdir', dirs_exist_ok = True)
+
