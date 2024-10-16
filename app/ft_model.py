@@ -127,7 +127,7 @@ class ExploreNode(BaseModel):
 @model_group
 class TrainNode(BaseModel):
     train_machine: String = Field(
-        default="1 * NVIDIA V100_32g",
+        default="1 * NVIDIA A100_80g",
         title="default machine type"
     )
     train_image: String = Field(
