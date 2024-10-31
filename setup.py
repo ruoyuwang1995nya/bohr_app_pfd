@@ -22,7 +22,7 @@ setuptools.setup(
         "fpop>=0.0.7",
         "boto3",
         "pfd-kit @ git+https://github.com/ruoyuwang1995nya/pfd-kit.git@v0.1.0#eqq=pfd-kit",
-        "dpgen2 @ git+https://github.com/ruoyuwang1995nya/dpgen2.git@v0.0.8#eqq=dpgen2"
+        #"dpgen2 @ git+https://github.com/ruoyuwang1995nya/dpgen2.git"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
