@@ -12,7 +12,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=[
-        "pydflow>=1.7.83",
+        "pydflow==1.8.95",
         "pymatgen>=2023.8.10",
         'pymatgen-analysis-defects>=2023.8.22',
         "dpdata>=0.2.13",
@@ -21,6 +21,7 @@ setuptools.setup(
         "seekpath",
         "fpop>=0.0.7",
         "boto3",
+        "pfd-kit @ git+https://github.com/ruoyuwang1995nya/pfd-kit.git@v0.1.0#eqq=pfd-kit"
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

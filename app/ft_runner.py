@@ -68,12 +68,24 @@ def get_exploration(opts:Finetune):
         "max_iter":opts.max_iter,
         "converge_config":{
             "type":opts.converge_type,
-            "RMSE":opts.converge_rmse
+            "RMSE":opts.converge_rmse,
+            "conf_filter":[
+                {"type":"force_delta",
+                    "thr_l": 0.06,
+                    "thr_h": 1 
+                },
+                 {"type":"energy_delta",
+                    "thr_l": 0.001,
+                    "thr_h": 1
+                }
+            ]
             },
         "test_set_config":{
             "test_size":0.1
         },
-        "filter":[],
+        "filter":[
+            {"type":"distance"}
+            ],
         }
         task={ 
                 "conf_idx": [ii for ii in range(len(opts.configurations))],
@@ -101,6 +113,7 @@ def get_global_config(opts:Finetune):
     bohrium_config={
             "username": opts.bohrium_username,
             "ticket": opts.bohrium_ticket,
+            #"password": opts.bohrium_password,
             "project_id": int(opts.bohrium_project_id)
         }
     return bohrium_config

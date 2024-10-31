@@ -95,6 +95,7 @@ def get_global_config(opts: Dist):
     bohrium_config={
             "username": opts.bohrium_username,
             "ticket": opts.bohrium_ticket,
+            #"password": opts.bohrium_password,
             "project_id": int(opts.bohrium_project_id)
         }
     return bohrium_config

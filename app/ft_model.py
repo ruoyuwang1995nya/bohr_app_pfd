@@ -7,7 +7,8 @@ from dp.launching.typing import (
     BohriumUsername, 
     BohriumProjectId, 
     BohriumMachineType,
-    BohriumTicket
+    BohriumTicket,
+    BohriumPassword
 )
 
 from dp.launching.cli import (
@@ -28,6 +29,7 @@ class InjectConfig(BaseModel):
     Get bohrium username, etc.
     '''
     bohrium_username: BohriumUsername
+    #bohrium_password: BohriumPassword
     bohrium_ticket: BohriumTicket
     bohrium_project_id: BohriumProjectId
 
@@ -127,7 +129,7 @@ class ExploreNode(BaseModel):
 @model_group
 class TrainNode(BaseModel):
     train_machine: String = Field(
-        default="1 * NVIDIA A100_80g",
+        default="1 * NVIDIA V100_32g",
         title="default machine type"
     )
     train_image: String = Field(
